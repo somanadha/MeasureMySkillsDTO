@@ -3,9 +3,13 @@ package com.bst.mms.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.NoArgsConstructor;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@NoArgsConstructor
 @AllArgsConstructor
 @Data
 public class QuestionDTO {
@@ -19,6 +23,7 @@ public class QuestionDTO {
 
     private List<AnswerOptionDTO> answerOptionDTOs;
 
+    @JsonIgnore
     public List<Integer> getAnswerOptionIds() {
         List<Integer> answerOptionIds = new ArrayList<>();
 
